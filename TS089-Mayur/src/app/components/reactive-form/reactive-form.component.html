@@ -1,0 +1,54 @@
+<div class="container">
+    <div class="row mt-5">
+        <div class="col-lg-6">
+            <form [formGroup]="userForm" (ngSubmit)="onSubmit()">
+                <mat-form-field>
+                  <mat-label>User Name</mat-label>
+                  <input matInput formControlName="userName">
+                  <mat-error *ngIf="userForm.get('userName')?.hasError('required') && userForm.get('userName')?.touched">User Name is required</mat-error>
+                  <mat-error *ngIf="userForm.get('userName')?.hasError('minlength') && userForm.get('userName')?.touched">Please enter at least 4 characters</mat-error>
+                </mat-form-field>
+                <br>
+                <mat-form-field>
+                  <mat-label>User Country</mat-label>
+                  <mat-select formControlName="userCountry">
+                    <mat-option *ngFor="let country of countries" [value]="country">{{ country }}</mat-option>
+                  </mat-select>
+                  <mat-error *ngIf="userForm.get('userCountry')?.hasError('required') && userForm.get('userCountry')?.touched">User Country is required</mat-error>
+                </mat-form-field>
+            <br>
+            <mat-form-field>
+                <mat-label>Birthdate</mat-label>
+                <input matInput [matDatepicker]="picker" formControlName="birthdate">
+                <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+                <mat-datepicker #picker></mat-datepicker>
+                <mat-error *ngIf="userForm.get('birthdate')?.hasError('required') && userForm.get('birthdate')?.touched">Birthdate is required</mat-error>
+                <mat-error *ngIf="userForm.get('birthdate')?.hasError('dateInFuture') && userForm.get('birthdate')?.touched">Birthdate cannot be in the future</mat-error>
+              </mat-form-field>
+            <br>
+                <div>
+                  <label>Gender</label>
+                  <mat-radio-group formControlName="gender">
+                    <mat-radio-button *ngFor="let gender of genders" [value]="gender">{{ gender }}</mat-radio-button>
+                  </mat-radio-group>
+                  <mat-error *ngIf="userForm.get('gender')?.hasError('required') && userForm.get('gender')?.touched">Gender is required</mat-error>
+                </div>
+            <br>
+                <button mat-raised-button color="primary" type="submit">Submit</button>
+              </form>
+        </div>
+        <div class="col-lg-6">
+            
+                @if(isFormSubmit){
+                    <div class="bg-light border border-3 border-success p-3">
+                    <h2>Reactive Form</h2><hr>
+                    <h4>User Name {{userForm.value.userName}}</h4>
+                    <h4>User Country {{userForm.value.userCountry}}</h4>
+                    <h4>User Gender {{userForm.value.gender}}</h4>
+                    <h4>User Birth Date {{userForm.value.birthdate}}</h4>
+                    </div>
+                }
+        </div>
+    </div>    
+</div>
+  

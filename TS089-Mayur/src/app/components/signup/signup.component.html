@@ -1,0 +1,16 @@
+<div class="bg-light border border-3 border-success p-3 w-50">
+    <h2>Signup</h2><hr>
+    <form (submit)="onSignup()">
+      <label for="name">Name:</label>
+      <input id="name" class="form-control" [(ngModel)]="name" name="name" required />
+  
+      <label for="email">Email:</label>
+      <input id="email" class="form-control" [(ngModel)]="email" name="email" required />
+  
+      <label for="password">Password:</label>
+      <input id="password" class="form-control" type="password" [(ngModel)]="password" name="password" required />
+  
+      <button type="submit" class="btn btn-success mt-3">Signup</button>
+    </form>
+  </div>
+  

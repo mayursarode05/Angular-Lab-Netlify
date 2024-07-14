@@ -1,0 +1,31 @@
+{
+  "mayur": [
+    {
+      "name": "Saurabh Lambe",
+      "id": "TS077",
+      "city": "Nashik",
+      "email": "saurabh@gmail.com"
+    },
+    {
+      "id": "TS092",
+      "name": "Ritesh Sarode",
+      "city": "Bhusawal",
+      "email": "ritesh@gmail.com"
+    },
+    {
+      "id": "TS096",
+      "name": "Mayur Sarode",
+      "city": "Bhusawal"
+    },
+    {
+      "id": "TS099",
+      "name": "Shubham Pokhale",
+      "city": "Patna"
+    },
+    {
+      "id": "TS123",
+      "name": "Soham Patil",
+      "city": "Savda"
+    }
+  ]
+}

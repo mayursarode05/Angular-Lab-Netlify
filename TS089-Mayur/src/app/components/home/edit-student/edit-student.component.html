@@ -1,0 +1,35 @@
+<h1>Edit Student</h1>
+<form [formGroup]="stdForm" (ngSubmit)="HandleForm()">
+    <div>
+        <label for="id">ID:</label>
+        <input type="text" id="id" formControlName="id">
+        <div *ngIf="stdForm.get('id')?.invalid && stdForm.get('id')?.touched">
+          <small *ngIf="stdForm.get('id')?.errors?.['required']" class="text-danger">ID is required.</small>
+        </div>
+      </div>
+    
+    <div>
+        <label for="name">Name:</label>
+        <input type="text" id="name" formControlName="name">
+        <div *ngIf="stdForm.get('name')?.invalid && stdForm.get('name')?.touched">
+          <small *ngIf="stdForm.get('name')?.errors?.['required']" class="text-danger">Name is required.</small>
+        </div>
+      </div>
+      
+      <div>
+        <label for="city">City:</label>
+        <input type="text" id="city" formControlName="city">
+        <div *ngIf="stdForm.get('city')?.invalid && stdForm.get('age')?.touched">
+          <small *ngIf="stdForm.get('city')?.errors?.['required']" class="text-danger">city is required.</small>
+        </div>
+      </div>
+      <button class="btn btn-success" type="submit" [disabled]="!stdForm.valid">Submit</button>
+</form>
+
+
+<!--  -->
+<h1>Child Component</h1>
+<ng-content select="[slot='name']"></ng-content>
+<ng-content select="[slot='age']"></ng-content>
+<ng-content select="[slot='city']"></ng-content>
+<ng-content select="[slot='contact']"></ng-content>

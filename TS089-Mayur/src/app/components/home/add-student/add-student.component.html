@@ -1,0 +1,31 @@
+<h1>Add Student Component</h1>
+
+
+
+
+
+<!-- Template Driven Form -->
+<h2>Template Driven Form</h2>
+<form #studentForm="ngForm" (ngSubmit)="HandleForm(studentForm)">
+  <label for="id">Enter ID</label>
+  <input type="text" id="id" name="id" ngModel required>  
+
+    <label for="name">Enter Name</label>
+    <input type="text" id="name" name="name" ngModel required>
+    
+    <label for="city">Enter city</label>
+    <input type="text" id="city" name="city" ngModel required>
+    
+    <!-- <label for="city">Enter City</label>
+    <input type="text" id="city" name="city" ngModel required> -->
+    
+    <button type="submit" [disabled]="!studentForm.valid" class="btn btn-success">Submit Data</button>
+</form>
+
+@if(submitted){
+    <h1>Data Submitted</h1>
+    <h4>{{student.name}}</h4>
+    <h4>{{student.age}}</h4>
+    <h4>{{student.city}}</h4>
+}
+

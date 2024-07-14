@@ -1,0 +1,39 @@
+<div class="container-fluid">
+  <h1 class="p-3 bg-light text-success">EMPS</h1>
+  <div class="row">
+    <div class="col-lg-3 text-center bg-light border border-1 border-success p-3 min-vh-100">
+      <a routerLink="reactive-form" class="btn btn-primary"> Angular Forms</a><hr>
+      <a routerLink="animation" class="btn btn-success"> Animation</a><hr>
+      <a routerLink="mat-component" class="btn btn-warning">Material UI</a><hr>
+      <a routerLink="BehaviorSubject" class="btn btn-warning">RxJS BehaviorSubject</a><hr>
+      <a routerLink="event-listner" class="btn btn-warning">Event Listner</a><hr>
+      <a routerLink="home" class="btn btn-warning">Operators</a><hr>
+      <a routerLink="inter" class="btn btn-Success">inter</a><hr>
+      <a routerLink="signup" class="btn btn-danger"> NgRx</a>
+    </div>
+    <div class="col-lg-9">
+      <!-- Custom directive -->
+       <!-- <div class="w-50 border text-center border-3 birder-success bg-light p-3">
+        <h1>Custom Directive</h1><hr>
+        <h3 appTextColor="red" class="test-element">Click me to change color</h3><hr>
+        <h3 appTextColor="green" class="test-element">Click me to change color</h3><hr>
+        <h3 appTextColor="yellow" class="test-element">Click me to change color</h3>
+        <div>
+          <button (click)="condition = !condition" class="btn btn-success">Click me to view paragraph</button>
+          <p *appUnless="condition" class="toggle-content"> This paragraph is displayed when the condition is false.</p>
+        </div>
+       </div> -->
+       
+       <!-- Angular Animation -->
+       <!-- <app-animation></app-animation> -->
+      <router-outlet></router-outlet>
+    </div>
+  </div>
+</div>
+
+<!-- 
+<mat-sidenav-container>
+  <mat-sidenav>Start</mat-sidenav>
+  <mat-sidenav position="end">End</mat-sidenav>
+  <section><router-outlet></router-outlet></section>
+</mat-sidenav-container> -->

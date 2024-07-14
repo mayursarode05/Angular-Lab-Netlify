@@ -1,0 +1,28 @@
+<h1 class="m-3">List of Students</h1>
+
+
+<div class="container">
+    <a class="btn btn-primary" routerLink="add-student">Add Student</a>
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Student Name</th>
+                <th>Student Address</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            @for (x of students; track $index) {
+                <tr>
+                    <td>{{x.id}}</td>
+                    <td>{{x.name}}</td>
+                    <td>{{x.city}}</td>
+                    <td><a class="btn btn-warning me-3" [routerLink]="['edit-student',x.id]">Edit</a>
+                    <button class="btn btn-danger" (click)="HandleDelete(x.id)">Delete</button></td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>
+

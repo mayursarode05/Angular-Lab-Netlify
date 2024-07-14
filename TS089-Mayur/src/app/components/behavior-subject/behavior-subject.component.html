@@ -1,0 +1,20 @@
+<div class="container-fluid">
+    <div class="anime-content">
+        <div class="anime-title">
+            Behavior subject
+        </div>
+        <div class="anime-description">
+            Explore the amazing world with your favorite characters!
+        </div>
+    </div>
+    <div class="current-state text-center">
+        <p>Current State: {{ state | json }}</p>
+        <button class="btn btn-primary mt-3" (click)="updateState()">Update State</button>
+    </div>
+    <div class="multicast-state text-center">
+        <p>Multicast State: {{ multicastState | json }}</p>
+        <button class="btn btn-primary mt-3 me-3" (click)="emitToMulticast()">Emit Multicast Value</button>
+        <button class="btn btn-danger mt-3 me-3" (click)="emitError()">Emit Error</button>
+        <button class="btn btn-secondary mt-3" (click)="completeMulticast()">Complete Multicast</button>
+    </div>
+</div>

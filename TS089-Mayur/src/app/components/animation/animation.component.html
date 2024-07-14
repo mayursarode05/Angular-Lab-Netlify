@@ -1,0 +1,22 @@
+<!-- example.component.html -->
+<div class="container d-flex justify-content-center align-items-center vh-100">
+    <div> 
+      <div *ngIf="isVisible" @fadeInOut class="box text-center text-white mb-4">
+        Fade In/Out Animation
+      </div>
+      <hr>
+      <div [@slideInOut]="slideState" class="box text-center text-white mb-4">
+        Slide In/Out Animation
+      </div>
+      <hr>
+      <div @keyframeAnimation class="box text-center text-white mb-4">
+        Keyframe Animation
+      </div>
+      <hr>
+      <div class="text-center">
+        <button class="btn btn-danger mr-2 me-3" (click)="toggleVisibility()">Toggle Visibility</button>
+        <button class="btn btn-info" (click)="toggleSlide()">Toggle Slide</button>
+      </div>
+    </div>
+  </div>
+  

@@ -1,0 +1,9 @@
+<div>
+    <h2>Dashboard</h2><hr>
+    <div class="bg-light border border-3 border-success p-3">
+      <div *ngIf="user$ | async as user">
+        <p>Welcome, {{ user.name | json }}!</p>
+      </div>
+    </div>
+  </div>
+  
